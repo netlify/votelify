@@ -1,0 +1,22 @@
+{
+  "name": "votelify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "netlify"
+  ],
+  "author": "Netlify Inc.",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "cheerio": "^1.0.0-rc.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netlify/votelify.git"
+  }
+}

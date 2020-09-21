@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ renderData.title or title or metadata.title }}</title>
+    <meta name="Description" content="{{ renderData.description or description or metadata.description }}">
+    <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
+    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+  </head>
+  <body>
+    <header>
+      <h1>
+        <div class="main">
+          <a class="title" href="{{ '/' | url }}">
+            {{ metadata.title }}
+          </a>
+      </h1>
+
+    </header>
+
+    <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+      <div class="wrapper">
+        {{ content | safe }}
+      </div>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

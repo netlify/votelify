@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "eleventy",
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve"
   },
   "keywords": [
     "netlify"
@@ -12,6 +15,7 @@
   "author": "Netlify Inc.",
   "license": "MIT",
   "dependencies": {
+    "@11ty/eleventy": "^0.11.0",
     "axios": "^0.20.0",
     "cheerio": "^1.0.0-rc.3"
   },

@@ -14,7 +14,8 @@
       {% include "vote-banner.njk" %}
     {% endif %}
     </header>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,32L48,48C96,64,192,96,288,117.3C384,139,480,149,576,181.3C672,213,768,267,864,288C960,309,1056,299,1152,250.7C1248,203,1344,117,1392,74.7L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+    {# <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,32L48,48C96,64,192,96,288,117.3C384,139,480,149,576,181.3C672,213,768,267,864,288C960,309,1056,299,1152,250.7C1248,203,1344,117,1392,74.7L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg> #}
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 740 458.05" id="top-wave"><defs><style>.cls-1{fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" y1="229.03" x2="740" y2="229.03" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffe35f"/><stop offset="0.27" stop-color="#ffe056"/><stop offset="0.57" stop-color="#ffda46"/><stop offset="0.87" stop-color="#ffcb1d"/><stop offset="0.99" stop-color="#ffc500"/></linearGradient></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M740,458.05c-38-2.89-94.3-11.85-143.79-43.05-98-61.8-58.86-141.29-146.3-204-80.51-57.74-153.69-19-280.08-75C82.46,97.31,29.86,40.05,0,0L740,.68Z"/></g></g></svg>
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
       <div class="wrapper">
         {{ content | safe }}

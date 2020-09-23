@@ -3,7 +3,7 @@
   publish = "_site"
 
 [[redirects]]
-  from = "/*"
-  to = "/:splat"
+  from = "/secret"
+  to = "/secret"
   status = 200
   edge_handler = "voterRegistration"

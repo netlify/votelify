@@ -1,12 +1,8 @@
 export async function onRequest(event) {
-  if (event.request.path == '/secret') {
-    const resp = `<html>
-    <head>
-    </head>
-    <body>
-      YOU GOT PUNKED!
-    </body>
-    </html>`
-    event.respondWith(200, resp, {})
-  }
+  await event.respondWith(handler(event));
+}
+
+const handler = async (event) => {
+  const area = event.request.headers.get('X-NF-Subdivision-Code');
+  event.request.path = `${event.request.path}/state/${area.toLowerCase()}`;
 }

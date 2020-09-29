@@ -1,4 +1,4 @@
-export async function onRequest(event) {
+export function onRequest(event) {
   event.replaceResponse(async () => {
     const transformation = new TransformStream({
       flush(controller) {

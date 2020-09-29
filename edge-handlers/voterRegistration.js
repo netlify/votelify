@@ -8,7 +8,7 @@ export async function onRequest(event) {
       },
     });
 
-    console.log(`starting fetch to ${event.request.url}`);
+    console.log(`starting fetch from this url ${event.request.url}`);
     const originResponse = await fetch(event.request);
 
     if (!originResponse.ok) {

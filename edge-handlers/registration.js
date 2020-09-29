@@ -15,7 +15,7 @@ export function onRequest(event) {
     console.log(`reading from ${auth}`);
     console.log(`headers ${event.request.headers}`)
 
-    let state = area ? area.toLowerCase() : "il";
+    let state = stateCode ? stateCode.toLowerCase() : "il";
     const originResponse = await fetch(new Request(`${event.request.url.replace("?#", "")}state/${state}`));
 
     const transformation = new TransformStream({

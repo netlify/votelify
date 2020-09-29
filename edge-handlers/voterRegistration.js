@@ -1,18 +1,13 @@
 export async function onRequest(event) {
-  // const area = event.request.headers.get('X-NF-Subdivision-Code');
-  // event.request.url = `/state/${area.toLowerCase()}`;
-
-  const transformer = new TransformStream({
-    transform(chunk, controller) {
-      console.log(`transforming chunk of size ${chunk.byteLength}`);
-      const encoder = new TextEncoder();
-      const buf = encoder.encode("(transformed)");
-      controller.enqueue(chunk);
-      controller.enqueue(buf);
-    }
-  });
-
   event.replaceResponse(async () => {
+    const transformation = new TransformStream({
+      flush(controller) {
+        const encoder = new TextEncoder();
+        const buf = encoder.encode("<p>Served from a Netlify Edge Handler</p>");
+        controller.enqueue(buf);
+      },
+    });
+
     console.log(`starting fetch to ${event.request.url}`);
     const originResponse = await fetch(event.request);
 
@@ -20,7 +15,7 @@ export async function onRequest(event) {
       throw new Error("Response not ok");
     }
 
-    return new Response(originResponse.body.pipeThrough(transformer), {
+    return new Response(originResponse.body.pipeThrough(transformation), {
       headers: {
         "content-type": "text/plain"
       }

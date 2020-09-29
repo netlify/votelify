@@ -14,7 +14,7 @@ export async function onRequest(event) {
 
   event.replaceResponse(async () => {
     console.log(`starting fetch to ${event.request.url}`);
-    const originResponse = await fetch(new Request("https://votelify.edge-handlers.dev/state/il"));
+    const originResponse = await fetch(event.request);
 
     if (!originResponse.ok) {
       throw new Error("Response not ok");

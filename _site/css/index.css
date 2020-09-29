@@ -13,6 +13,7 @@
   --announcement-bar-text: #215888;
   --announcement-bar-background: linear-gradient(-45deg, rgb(212, 245, 255),rgb(234, 250, 255), rgb(234, 250, 255), #D3F6EF);
   --announcement-bar-icon-color: rgba(33, 88, 136, 0.20);
+  --fontDisplay: "MADE-Dillan", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 * {
@@ -56,7 +57,7 @@ html, body {
 }
 
 .top-section {
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--fontDisplay);
   display: flex;
   align-items: center;
 }
@@ -74,7 +75,7 @@ html, body {
 }
 
 .top-section h1 {
-  font-family: 'Quicksand', sans-serif;
+  font-family: var(--fontDisplay);
   font-size: 1.75em;
   margin: 0;
 }
@@ -103,4 +104,11 @@ html, body {
   .vote-illustration {
     display: block;
   }
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "MADE-Dillan";
+  font-weight: bold;
+  src: url("/fonts/MADE-Dillan.otf") format("opentype");
 }

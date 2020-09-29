@@ -3,7 +3,7 @@ export function onRequest(event) {
     const area = event.request.headers.get('X-NF-Subdivision-Code');
     console.log(`starting fetch from this url ${event.request.url}`)
     let state = area ? area.toLowerCase() : "il";
-    const originResponse = await fetch(new Request(`${event.request.url}/state/${state}`));
+    const originResponse = await fetch(new Request(`${event.request.url.replace("?#", "")}state/${state}`));
 
     const transformation = new TransformStream({
       flush(controller) {

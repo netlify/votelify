@@ -1,8 +1,20 @@
 export function onRequest(event) {
   event.replaceResponse(async () => {
-    const area = event.request.headers.get('X-NF-Subdivision-Code');
+    const stateName = event.request.headers.get('X-NF-Subdivision-Name');
+    const stateCode = event.request.headers.get('X-NF-Subdivision-Code');
+    const airport = event.request.headers.get('X-NF-Availability-Zone');
+    const country = event.request.headers.get('X-NF-Country-Name');
+    const countryCode = event.request.headers.get('X-NF-Country-Code');
+    const city = event.request.headers.get('X-NF-City-Name');
+
+
+    const auth = event.request.headers.get('Authorization')
+
     console.log(`starting fetch from this url ${event.request.url}`)
-    console.log(`reading from ${area}`);
+    console.log(`geolocation headers state: ${stateName}, state: ${stateCode}, airport ${airport}, country ${country}, countryCode ${countryCode}, city: ${city}`);
+    console.log(`reading from ${auth}`);
+    console.log(`headers ${event.request.headers}`)
+
     let state = area ? area.toLowerCase() : "il";
     const originResponse = await fetch(new Request(`${event.request.url.replace("?#", "")}state/${state}`));
 

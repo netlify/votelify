@@ -14,7 +14,7 @@ export function onRequest(event) {
     });
 
     const transformedBody = originResponse.body.pipeThrough(transformation);
-    const headers = { 'Content-Type': 'text/plain' };
+    const headers = { 'Content-Type': 'text/html' };
 		
     return new Response(transformedBody, { headers });
   });

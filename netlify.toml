@@ -4,7 +4,7 @@
 
 [[redirects]]
   from = "/"
-  to = "/large"
+  to = "/state/il"
   status = 200
   force = true
   edge_handler = "voterRegistration"

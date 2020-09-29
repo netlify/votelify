@@ -1,5 +1,7 @@
 export function onRequest(event) {
   event.replaceResponse(async () => {
+    const originResponse = await fetch(event.request);
+
     const transformation = new TransformStream({
       flush(controller) {
         const encoder = new TextEncoder();
@@ -8,17 +10,9 @@ export function onRequest(event) {
       },
     });
 
-    console.log(`starting fetch from this url ${event.request.url}`);
-    const originResponse = await fetch(event.request);
-
-    if (!originResponse.ok) {
-      throw new Error("Response not ok");
-    }
-
-    return new Response(originResponse.body.pipeThrough(transformation), {
-      headers: {
-        "content-type": "text/plain"
-      }
-    })
+    const transformedBody = originResponse.body.pipeThrough(transformation);
+    const headers = { 'Content-Type': 'text/plain' };
+		
+    return new Response(transformedBody, { headers });
   });
 }

@@ -13,6 +13,7 @@ export async function onRequest(event) {
   });
 
   event.replaceResponse(async () => {
+    console.log(`starting fetch to ${event.request.url}`);
     const originResponse = await fetch(new Request("https://votelify.edge-handlers.dev/state/il"));
 
     if (!originResponse.ok) {

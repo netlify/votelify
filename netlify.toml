@@ -4,6 +4,7 @@
 
 [[redirects]]
   from = "/"
-  to = "/"
+  to = "/large"
   status = 200
+  force = true
   edge_handler = "voterRegistration"

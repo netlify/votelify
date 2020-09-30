@@ -9,7 +9,7 @@ export function onRequest(event) {
 
     const transformedBody = new HTMLRewriter()
       .on("footer", elem => {
-        elem.replace("Made by Netlify", ContentType.Text);
+        elem.replace("Made by Netlify", "text");
       })
       .transformInto(originResponse)
 

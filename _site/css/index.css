@@ -63,6 +63,8 @@ html, body {
 }
 
 .register-details {
+  position: relative;
+  z-index: 10;
   padding: 3em 2em;
 }
 

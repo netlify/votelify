@@ -23,5 +23,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/netlify/votelify.git"
+  },
+  "devDependencies": {
+    "css-what": "^3.3.0",
+    "html-entities": "^1.3.1",
+    "htmlparser2": "^4.1.0",
+    "stream": "0.0.2"
   }
 }

@@ -5,7 +5,7 @@ export function onRequest(event) {
     const stateCode = event.request.headers.get('X-NF-Subdivision-Code');
 
     let state = stateCode ? stateCode.toLowerCase() : "ca";
-    const originResponse = await fetch(new Request(`${event.request.url.replace("?#", "")}state/${state}`));
+    const originResponse = await fetch(event.request);
 
     const transformedBody = new HTMLRewriter()
       .on("footer", elem => {

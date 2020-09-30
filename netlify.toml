@@ -7,4 +7,4 @@
   to = "/"
   status = 200
   force = true
-  edge_handler = "voterRegistration"
+  edge_handler = "registration"

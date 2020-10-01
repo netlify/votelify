@@ -4,6 +4,7 @@ export function onRequest(event) {
   console.log(area)
 
   event.replaceResponse(async () => {
+    console.log(`${event.request.url.replace("?#", "")}state/${state}`)
     const originResponse = await fetch(`${event.request.url.replace("?#", "")}state/${state}`);
 
     const headers = { 'Content-Type': 'text/html' };

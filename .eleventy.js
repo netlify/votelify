@@ -1,3 +1,5 @@
+const svgContents = require("eleventy-plugin-svg-contents");
+
 module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/css");
@@ -67,6 +69,21 @@ module.exports = function(eleventyConfig) {
     return states[state];
   })
   
+  eleventyConfig.addFilter('addSpaces', (date) => {
+    if (date) {
+      return date.replace(/\,/g, ", ")
+    }
+  })
+
+  eleventyConfig.addFilter('getSVGURL', (state) => {
+    if (state) {
+      return `/src/_includes/assets/${state.toUpperCase()}.svg`
+      // return `/assets/${state.toUpperCase()}.svg`
+    }
+  })
+
+  eleventyConfig.addPlugin(svgContents);
+
   return {
     templateFormats: [
       "md",

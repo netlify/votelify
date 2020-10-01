@@ -108,6 +108,7 @@ main {
 
 .state {
   height: 300px;
+  width: 300px;
 }
 
 .state svg {

@@ -5,7 +5,7 @@ export function onRequest(event) {
 
   event.replaceResponse(async () => {
     console.log(`${event.request.url.replace("?#", "")}state/${state}`)
-    const originResponse = await fetch(`${event.request.url.replace("?#", "")}state/${state}`);
+    const originResponse = await fetch(event.request);
 
     const headers = { 'Content-Type': 'text/html' };
 		

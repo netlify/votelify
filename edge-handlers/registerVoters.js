@@ -1,5 +1,5 @@
 import { HTMLRewriter } from "../utils/html-rewriter";
-const { writable } = new TransformStream();
+const { readable, writable } = new TransformStream();
 
 export function onRequest(event) {
   event.replaceResponse(async () => {

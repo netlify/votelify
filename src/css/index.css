@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand:wght@500&display=swap');
-
 :root {
   --red: #C5004A;
   --darkred: #7F0036;
@@ -10,11 +8,8 @@
   --blue: #082840;
   --white: #fff;
   --superblue: #2c69b3;
-  /* marketing site styles */
-  --announcement-bar-text: #215888;
-  --announcement-bar-background: linear-gradient(-45deg, rgb(212, 245, 255),rgb(234, 250, 255), rgb(234, 250, 255), #D3F6EF);
-  --announcement-bar-icon-color: rgba(33, 88, 136, 0.20);
   --fontDisplay: "MADE-Dillan", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-sans-serif: Roboto, sans-serif;
 }
 
 * {
@@ -23,55 +18,34 @@
   margin: 0;
 }
 
-html, body, main {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden;
 }
 
 main {
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-.announcement-bar {
-  color: var(--announcement-bar-text);
-  background: var(--announcement-bar-background);
-}
-
-.announcement-bar-content{
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-}
-
-.announcement-bar-content > * {
-  padding: .5em;
-  margin: 0;
-}
-
-.announcement-bar-close {
-  border: 0;
-  background: 0 0;
-  width: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: .8;
-  position: relative;
-  z-index: 2;
+  background-image: url("assets/top-wave.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 60%;
 }
 
 .top-section {
-  font-family: var(--fontDisplay);
+  font-family:Roboto, sans-serif;;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap-reverse;
-  height: 800px;
   padding: 3em;
+  font-size: 20px;
+}
+
+.top-section p {
+  line-height: 36px;
 }
 
 .register-details h3 {
@@ -160,5 +134,5 @@ main {
   font-display: swap;
   font-family: "MADE-Dillan";
   font-weight: bold;
-  src: url("/fonts/MADE-Dillan.otf") format("opentype");
+  src: url("fonts/MADE-Dillan.otf") format("opentype");
 }

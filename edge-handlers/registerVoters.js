@@ -1,13 +1,27 @@
-export function onRequest(event) {
-  const area = event.request.headers.get('X-NF-Subdivision-Code'); //CA, NY
-  let state = area ? area.toLowerCase() : "ca";
+import fs from "fs";
+import { HTMLRewriter } from "../utils/html-rewriter";
 
+export function onRequest(event) {
   event.replaceResponse(async () => {
-    console.log(`${event.request.url.replace("?#", "")}state/${state}`)
-    const originResponse = await fetch(`${event.request.url.replace("?#", "")}state/${state}`);
+    const area = event.request.origin.subdivision;
+    let state = area && area.code ? area.code.toLowerCase() : "ca";
+
+    const url = new URL(event.request.url);
+    url.pathname = `/state/${state}`;
+
+    const originResponse = await fetch(url.toString());
+
+    const transformedBody = new HTMLRewriter()
+      .on("h1", elem => {
+        elem.replace("Made by Netlify", "text");
+      })
+      .transformInto(originResponse)
 
     const headers = { 'Content-Type': 'text/html' };
 
-    return new Response(originResponse.body, { headers, status: 200 });
+    const transform = originResponse.body.pipe(transformedBody);
+    console.log("I think this works?")
+		
+    return new Response(transform, { headers });
   });
 }

@@ -19,7 +19,7 @@ export function onRequest(event) {
 
     const headers = { 'Content-Type': 'text/html' };
 
-    originResponse.body.pipeTo(writable);
+    await originResponse.body.pipeTo(writable);
 		
     return new Response(readable, { headers });
   });

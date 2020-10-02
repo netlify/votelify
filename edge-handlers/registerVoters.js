@@ -18,9 +18,8 @@ export function onRequest(event) {
 
     const headers = { 'Content-Type': 'text/html' };
 
-    // const transform = originResponse.body.pipe(transformedBody);
-    console.log(originResponse.body.pipe)
+    const transform = originResponse.body.pipeTo(transformedBody);
 		
-    return new Response(originResponse, { headers });
+    return new Response(transform, { headers });
   });
 }

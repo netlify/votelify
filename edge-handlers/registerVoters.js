@@ -10,17 +10,15 @@ export function onRequest(event) {
 
     const originResponse = await fetch(url.toString());
 
-    const transformedBody = new HTMLRewriter()
-      .on("h1", elem => {
-        elem.replace("Made by Netlify", "text");
-      })
-      .transformInto(originResponse)
-
     const headers = { 'Content-Type': 'text/html' };
 
-    console.log(typeof transformedBody);
-    console.log(transformedBody);
-    const transform = originResponse.body.pipeTo(transformedBody);
+    const transform = originResponse.body.pipeTo(
+      new HTMLRewriter()
+        .on("h1", elem => {
+          elem.replace("Made by Netlify", "text");
+        })
+        .transformInto(originResponse)
+    );
 		
     return new Response(transform, { headers });
   });

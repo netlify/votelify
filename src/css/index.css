@@ -34,6 +34,9 @@ main {
   flex-basis: 100%;
   display: flex;
   height: 100%;
+  background-image: url("assets/waves.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* text treatment */

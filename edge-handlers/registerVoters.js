@@ -18,6 +18,8 @@ export function onRequest(event) {
 
     const headers = { 'Content-Type': 'text/html' };
 
+    console.log(typeof transformedBody);
+    console.log(transformedBody);
     const transform = originResponse.body.pipeTo(transformedBody);
 		
     return new Response(transform, { headers });

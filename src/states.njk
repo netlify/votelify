@@ -7,22 +7,24 @@ pagination:
 permalink: "state/{{ state | slug }}/index.html"
 ---
 <div class="top-section">
-  <div class="state">
+  <div class="state-outline">
   {{ state | getSVGURL | svgContents('class') | safe }}
   
   </div>
   <section class="register-details">
-    <h1>Register to Vote</h1>
-    <div class="register-details--links">
-      <h3>How to Register in {{ state | getStateName }}</h3>
-      <p>Register online at <a href="{{ registerByState[state].links.online }}">{{ state | getStateName }}’s state election website.</a></p>
-      <p>Register by mail at <a href="{{ registerByState[state].links.mail }}">{{ state | getStateName }}’s state election website.</a></p>
-    </div>
-    <div class="registration-details--deadlines">
-      <h3>Voter registration deadlines in {{ state | getStateName }}</h3>
-      <p>Online Registration: <b>{{ registerByState[state].dates.online | addSpaces }}</b></p>
-      <p>Mail-in Registration: <b>{{ registerByState[state].dates.mail | addSpaces }}</b></p>
-      <p>In-person Registration: <b>{{ registerByState[state].dates["in person"] | addSpaces }}</b></p>
+    <h1 class="heading">Register to Vote</h1>
+    <div class="register-details--text">
+      <div class="register-details--links">
+        <h3>How to Register in {{ state | getStateName }}</h3>
+        <p>Register online at <a href="{{ registerByState[state].links.online }}">{{ state | getStateName }}’s state election website.</a></p>
+        <p>Register by mail at <a href="{{ registerByState[state].links.mail }}">{{ state | getStateName }}’s state election website.</a></p>
+      </div>
+      <div class="registration-details--deadlines">
+        <h3>Voter registration deadlines in {{ state | getStateName }}</h3>
+        <p>Online Registration: <b>{{ registerByState[state].dates.online | addSpaces }}</b></p>
+        <p>Mail-in Registration: <b>{{ registerByState[state].dates.mail | addSpaces }}</b></p>
+        <p>In-person Registration: <b>{{ registerByState[state].dates["in person"] | addSpaces }}</b></p>
+      </div>
     </div>
   </section>
   

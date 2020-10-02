@@ -32,6 +32,8 @@ body {
 
 main {
   flex-basis: 100%;
+  display: flex;
+  height: 100%;
 }
 
 /* text treatment */
@@ -82,6 +84,19 @@ footer {
   width: 100%;
 }
 
+.state-outline {
+  height: 460px;
+  position: relative;
+}
+
+.state-outline svg {
+  position: absolute;
+  top:3em;
+  width: 100%;
+  height: 100%;
+  fill: #ddae2c;
+}
+
 @media(min-width: 32em) {
 }
 
@@ -102,6 +117,11 @@ footer {
 
   .vote-hand {
     height: 100%;
+  }
+
+  .state-outline svg {
+    position: relative;
+    top: 0;
   }
 }
 

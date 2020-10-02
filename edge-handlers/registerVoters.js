@@ -1,4 +1,5 @@
 import { HTMLRewriter } from "../utils/html-rewriter";
+const { writable } = new TransformStream();
 
 export function onRequest(event) {
   event.replaceResponse(async () => {
@@ -10,15 +11,15 @@ export function onRequest(event) {
 
     const originResponse = await fetch(url.toString());
 
+    const transformedBody = new HTMLRewriter()
+      .on("h1", elem => {
+        elem.replace("Made by Netlify", "text");
+      })
+      .transformInto(originResponse)
+
     const headers = { 'Content-Type': 'text/html' };
 
-    const transform = originResponse.body.pipeTo(
-      new HTMLRewriter()
-        .on("h1", elem => {
-          elem.replace("Made by Netlify", "text");
-        })
-        .transformInto(originResponse)
-    );
+    const transform = originResponse.pipe(transformedBody);
 		
     return new Response(transform, { headers });
   });

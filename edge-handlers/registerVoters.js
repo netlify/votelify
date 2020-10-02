@@ -1,4 +1,3 @@
-import fs from "fs";
 import { HTMLRewriter } from "../utils/html-rewriter";
 
 export function onRequest(event) {

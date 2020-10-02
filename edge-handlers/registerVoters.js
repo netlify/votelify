@@ -18,9 +18,9 @@ export function onRequest(event) {
 
     const headers = { 'Content-Type': 'text/html' };
 
-    const transform = originResponse.body.pipe(transformedBody);
-    console.log("I think this works?")
+    // const transform = originResponse.body.pipe(transformedBody);
+    console.log(originResponse.body.pipe)
 		
-    return new Response(transform, { headers });
+    return new Response(originResponse, { headers });
   });
 }

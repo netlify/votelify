@@ -4,6 +4,8 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/css");
 
+  eleventyConfig.addPassthroughCopy("_headers");
+
   eleventyConfig.addFilter('getStateName', (state) => {
     let states = {
       "al": "Alabama",

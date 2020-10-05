@@ -25,6 +25,9 @@ permalink: "state/{{ state | slug }}/index.html"
           {% if registerByState[state].links["in person"] %}
           <p>Register in person at <span class="register-details--reference-link external-link"><a href="{{ registerByState[state].links['in person'] }}">{{ state | getStateName }}’s state election website.</a></span></p>
           {% endif %}
+          {% if state === "nd" %}
+          <p>Voter registration is not required in North Dakota. <span class="register-details--reference-link external-link"><a href="{{ registerByState[state].links['learn'] }}">Learn more about voting on North Dakotas election website.</a></span></p>
+          {% endif %}
         </div>
       </div>
       <div class="registration-details--deadlines register-link--header">
@@ -38,6 +41,9 @@ permalink: "state/{{ state | slug }}/index.html"
           {% endif %}
           {% if registerByState[state].dates["in person"] %}
           <p>In-person Registration: <span class="register-date">{{ registerByState[state].dates["in person"] | addSpaces }}</span></p>
+          {% endif %}
+          {% if state === "nd" %}
+          <p>✨Residents of North Dakota are automatically registered to vote.✨</p>
           {% endif %}
         </div>
       </div>

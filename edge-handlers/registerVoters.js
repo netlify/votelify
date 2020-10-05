@@ -1,15 +1,12 @@
 export function onRequest(event) {
-  event.replaceResponse(async () => {
-    const area = event.request.origin.subdivision;
-    const { code } = event.request.origin.country;
+  const { code } = event.request.origin.country;
+  
+  if (code == "US") {
+    let { code: state } = event.request.origin.subdivision;
 
     let url = new URL(event.request.url);
+    url.pathname = `/state/${ state ? state.toLowerCase() : "ca" }`;
 
-    if (code == "US") {
-      let state = area && area.code ? area.code.toLowerCase() : "ca";
-      url.pathname = `/state/${state}`;
-    }
-
-    return fetch(url.toString());
-  });
+    event.replaceResponse(async () => await fetch(url.toString()));
+  }
 }

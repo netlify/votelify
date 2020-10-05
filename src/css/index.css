@@ -111,8 +111,11 @@ footer {
 }
 
 .vote-hand svg {
-  height: 100%;
-  width: 100%;
+  display: block;
+  height: 110%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
 }
 
 .state-outline {

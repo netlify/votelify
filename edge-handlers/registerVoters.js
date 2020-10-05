@@ -1,6 +1,3 @@
-import { HTMLRewriter } from "../utils/html-rewriter";
-const { readable, writable } = new TransformStream();
-
 export function onRequest(event) {
   event.replaceResponse(async () => {
     const area = event.request.origin.subdivision;
@@ -10,14 +7,8 @@ export function onRequest(event) {
     url.pathname = `/state/${state}`;
 
     const originResponse = await fetch(url.toString());
+    const headers = { 'Content-Type': 'text/html' };
 
-    const transformedBody = new HTMLRewriter()
-      .on("h1", elem => {
-        elem.replace("Made by Netlify", "text");
-      })
-      .transformInto(originResponse)
-
-    const transformed = originResponse.body.pipeThrough(transformedBody);
-    return new Response(transformed, resp);
+    return new Response(originResponse.body, { headers, status: 200 });
   });
 }

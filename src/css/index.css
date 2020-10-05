@@ -98,17 +98,6 @@ main {
   margin-top: 1em;
 }
 
-.external-link::after {
-  content: "";
-  display: block;
-  position: absolute;
-  height: 1.5px;
-  background: #146396;
-  bottom: 3px;
-  width: 448px;
-  left: 30px;
-}
-
 footer {
   padding: 1em;
   width: 100%;

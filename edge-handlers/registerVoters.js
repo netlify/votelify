@@ -16,7 +16,8 @@ export function onRequest(event) {
         elem.replace("Made by Netlify", "text");
       })
       .transformInto(originResponse)
-		
-    return transformedBody
+
+    const transformed = originResponse.body.pipeThrough(transformedBody);
+    return new Response(transformed, resp);
   });
 }

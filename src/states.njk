@@ -34,16 +34,20 @@ permalink: "state/{{ state | slug }}/index.html"
   <section class="register-details">
     <h1 class="heading">Register to Vote</h1>
     <div class="register-details--text">
-      <div class="register-details--links">
-        <h3>How to Register in {{ state | getStateName }}</h3>
-        <p>Register online at <a href="{{ registerByState[state].links.online }}">{{ state | getStateName }}’s state election website.</a></p>
-        <p>Register by mail at <a href="{{ registerByState[state].links.mail }}">{{ state | getStateName }}’s state election website.</a></p>
+      <div class="register-details--links register-link--header">
+        <h3>How to Register in <span class="register-state">📍{{ state | getStateName }}</span></h3>
+        <div class="registration-details--chunk">
+          <p>Register online at <span class="register-details--reference-link external-link"><a href="{{ registerByState[state].links.online }}">{{ state | getStateName }}’s state election website.</a></span></p>
+          <p>Register by mail at <span class="register-details--reference-link external-link"><a href="{{ registerByState[state].links.mail }}">{{ state | getStateName }}’s state election website.</a></span></p>
+        </div>
       </div>
-      <div class="registration-details--deadlines">
-        <h3>Voter registration deadlines in {{ state | getStateName }}</h3>
-        <p>Online Registration: <b>{{ registerByState[state].dates.online | addSpaces }}</b></p>
-        <p>Mail-in Registration: <b>{{ registerByState[state].dates.mail | addSpaces }}</b></p>
-        <p>In-person Registration: <b>{{ registerByState[state].dates["in person"] | addSpaces }}</b></p>
+      <div class="registration-details--deadlines register-link--header">
+        <h3>Voter registration deadlines in <span class="register-state">📍{{ state | getStateName }}</span></h3>
+        <div class="registration-details--chunk">
+          <p>Online Registration: <span class="register-date">{{ registerByState[state].dates.online | addSpaces }}</span></p>
+          <p>Mail-in Registration: <span class="register-date">{{ registerByState[state].dates.mail | addSpaces }}</span></p>
+          <p>In-person Registration: <span class="register-date">{{ registerByState[state].dates["in person"] | addSpaces }}</span></p>
+        </div>
       </div>
     </div>
   </section>

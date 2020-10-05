@@ -74,10 +74,10 @@ main {
 .register-details--text {
   max-width: 37.577em;
   margin: 0 auto;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1.3;
   margin: 0 auto;
-  padding: 1em;
+  padding: 1em 0;
 }
 
 .register-details--reference-link,
@@ -101,6 +101,30 @@ main {
   font-size: 1em;
   position: relative;
   margin-top: 1em;
+}
+
+.register-link--header h3 {
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+
+.register-link--header:not(:first-child) {
+  margin-top: 26px;
+}
+
+.register-state {
+  background: #f7f8f8;
+  padding: 6px 2px;
+  font-weight: 700;
+}
+
+.register-date {
+  font-weight: 500;
+  color: black;
+}
+
+.registration-details--chunk p:not(:first-child) {
+  margin-top: 8px;
 }
 
 footer {
@@ -179,6 +203,10 @@ footer {
   main,
   html {
     overflow: hidden;
+  }
+
+  .heading {
+    text-align: left;
   }
 
   .top-section {

@@ -11,6 +11,7 @@
   --fontDisplay: "MADE-Dillan", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-sans-serif: Roboto, sans-serif;
+  --font-light: Roboto-Light, sans-serif;
   --mamaBear: 32em;
 }
 
@@ -35,11 +36,15 @@ body {
   background-repeat: no-repeat;
   background-size: 60%, 100%;
   background-attachment: fixed;
+  font-family: var(--font-light);
+  color: #646e73;
 }
 
 main {
   flex-basis: 100%;
   display: flex;
+  font-weight: 200;
+  font-size: 16px;
   /* height: 100%; */
 }
 
@@ -51,6 +56,7 @@ main {
   font-size: var(--heading-min-font-size);
   font-size: clamp(var(--heading-min-font-size), 6vw, 4.25em);
   text-align: center;
+  color: #146396;
 }
 
 /* sections */
@@ -72,7 +78,6 @@ main {
   line-height: 1.3;
   margin: 0 auto;
   padding: 1em;
-  text-align: justify;
 }
 
 .register-details--reference-link,
@@ -102,6 +107,11 @@ footer {
   padding: 1em;
   width: 100%;
   text-align: right;
+}
+
+.bold {
+  font-weight: 400;
+  color: black;
 }
 
 /* svgs */
@@ -165,4 +175,16 @@ footer {
   font-family: "MADE-Dillan";
   font-weight: bold;
   src: url("fonts/MADE-Dillan.otf") format("opentype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-weight: normal;
+  src: url("fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "RobotoLight";
+  src: url("fonts/Roboto-Light.ttf") format("truetype");
 }

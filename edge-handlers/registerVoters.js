@@ -10,9 +10,6 @@ export function onRequest(event) {
       url.pathname = `/state/${state}`;
     }
 
-    const originResponse = await fetch(url.toString());
-    const headers = { 'Content-Type': 'text/html' };
-
-    return new Response(originResponse.body, { headers, status: 200 });
+    return fetch(url.toString());
   });
 }

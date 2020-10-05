@@ -16,11 +16,7 @@ export function onRequest(event) {
         elem.replace("Made by Netlify", "text");
       })
       .transformInto(originResponse)
-
-    const headers = { 'Content-Type': 'text/html' };
-
-    await originResponse.body.pipeTo(writable);
 		
-    return new Response(readable, { headers });
+    return transformedBody
   });
 }

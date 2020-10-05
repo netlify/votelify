@@ -1,158 +1,237 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand:wght@500&display=swap');
-
 :root {
-  --red: #C5004A;
-  --darkred: #7F0036;
+  --red: #c5004a;
+  --darkred: #7f0036;
   --lightgray: #e0e0e0;
-  --gray: #C0C0C0;
+  --gray: #c0c0c0;
   --darkgray: #333;
-  --navy: #17050F;
+  --navy: #17050f;
   --blue: #082840;
   --white: #fff;
   --superblue: #2c69b3;
-  /* marketing site styles */
-  --announcement-bar-text: #215888;
-  --announcement-bar-background: linear-gradient(-45deg, rgb(212, 245, 255),rgb(234, 250, 255), rgb(234, 250, 255), #D3F6EF);
-  --announcement-bar-icon-color: rgba(33, 88, 136, 0.20);
-  --fontDisplay: "MADE-Dillan", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --fontDisplay: "MADE-Dillan", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-sans-serif: Roboto, sans-serif;
+  --font-light: Roboto-Light, sans-serif;
+  --mamaBear: 32em;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0; 
+  padding: 0;
   margin: 0;
 }
 
-html, body, main {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url("assets/top-wave.svg"), url("assets/bottom-wave.svg");
+  background-position: right top, left calc(100% + 100px);
+  background-repeat: no-repeat;
+  background-size: 60%, 100%;
+  background-attachment: fixed;
+  font-family: var(--font-light);
+  color: #646e73;
 }
 
 main {
+  flex-basis: 100%;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  font-weight: 200;
+  font-size: 16px;
+  /* height: 100%; */
 }
 
-.announcement-bar {
-  color: var(--announcement-bar-text);
-  background: var(--announcement-bar-background);
+/* text treatment */
+.heading {
+  --heading-min-font-size: 3em;
+  font-family: var(--fontDisplay);
+  font-weight: 400;
+  font-size: var(--heading-min-font-size);
+  font-size: clamp(var(--heading-min-font-size), 6vw, 4.25em);
+  text-align: center;
+  color: #146396;
 }
 
-.announcement-bar-content{
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-}
-
-.announcement-bar-content > * {
-  padding: .5em;
-  margin: 0;
-}
-
-.announcement-bar-close {
-  border: 0;
-  background: 0 0;
-  width: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: .8;
-  position: relative;
-  z-index: 2;
-}
-
+/* sections */
 .top-section {
-  font-family: var(--fontDisplay);
-  display: flex;
+  display: grid;
+  grid-gap: 2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  max-width: 65em;
+  margin: 0 auto;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap-reverse;
-  height: 800px;
-  padding: 3em;
+  padding: 0 2em;
 }
 
-.register-details h3 {
-  padding-bottom: 1em;
+.register-details--text {
+  max-width: 37.577em;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin: 0 auto;
+  padding: 1em 0;
 }
 
-.register-details--links {
-  padding: 2em 0;
+.register-details--reference-link,
+.register-details--reference-link a {
+  color: #146396;
 }
 
-.top-section h1 {
-  font-family: var(--fontDisplay);
-  font-size: 1.75em;
-  margin: 0;
-}
-
-#top-wave {
-  width: 50%;
+.register-details--reference-link {
   position: absolute;
-  right: 0;
+  font-size: 0.75em;
 }
 
-#bottom-wave {
-  transform: scaleX(-1) scaleY(-1);
-  position: absolute;
-  bottom: -90px;
+.register-details--reference-link a::after {
+  content: "";
+  background: url("assets/icon-external-link-highlight.svg") 50% / contain no-repeat;
+  margin: 0 0.15rem;
+  padding-right: 0.65rem;
 }
 
-.vote-illustration {
+.external-link {
+  font-size: 1em;
+  position: relative;
+  margin-top: 1em;
+}
+
+.register-link--header h3 {
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+
+.register-link--header:not(:first-child) {
+  margin-top: 26px;
+}
+
+.register-state {
+  background: #f7f8f8;
+  padding: 6px 2px;
+  font-weight: 700;
+}
+
+.register-date {
+  font-weight: 500;
+  color: black;
+}
+
+.registration-details--chunk p:not(:first-child) {
+  margin-top: 8px;
+}
+
+footer {
+  padding: 1em;
   width: 100%;
-  display: none;
-  max-width: 300px;
+  text-align: right;
 }
 
-.state {
-  height: 300px;
-  width: 300px;
+.bold {
+  font-weight: 400;
+  color: black;
 }
 
-.state svg {
+/* svgs */
+.vote-hand {
+  margin-top: -10px;
+  height: 460px;
+}
+
+.vote-hand svg {
   display: block;
-  fill: #ddae2c;
+  height: 110%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.state-outline {
+  height: 460px;
+  position: relative;
+}
+
+.state-outline svg {
+  position: absolute;
+  top: 3em;
   width: 100%;
   height: 100%;
+  fill: #ffad43;
 }
 
-@media(min-width: 60em) {
-  .main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
+.state-outline::after {
+  content: "";
+  display: block;
+  height: 10%;
+  width: 10%;
+  /* background-image: url("assets/vote-badge.svg"); */
+}
+
+.vote-badge svg {
+  width: 30%;
+  position: absolute;
+  top: -5%;
+  right: 22%;
+}
+
+@media (min-width: 20em) {
+  .vote-badge svg {
+    width: 30%;
+    position: absolute;
+    top: -11%;
+    right: 22%;
+  }
+}
+
+@media (min-width: 32em) {
+  .vote-badge svg {
+    width: 20%;
+    position: absolute;
+    top: -30%;
+    right: 30%;
+  }
+}
+
+/* papa Bear */
+@media (min-width: 60em) {
+  main,
+  html {
+    overflow: hidden;
   }
 
-  .register-details {
-    padding: 0;
-    margin-top: -50px;
+  .heading {
+    text-align: left;
   }
 
   .top-section {
-    padding: 0;
-    justify-content: space-between;
-    width: 900px;
-    flex-wrap: unset;
+    grid-template-columns: 1fr 2fr;
   }
 
-  .top-section h1 {
-    font-size: 2.5em;
-  }
-  
-  .vote-illustration {
-    display: block;
+  footer {
+    position: absolute;
+    bottom: 0;
   }
 
-  #top-wave {
-    width: 50%;
-    max-width: 900px;
+  .vote-hand {
+    height: 100%;
   }
 
-  .state {
-    height: 500px;
+  .state-outline svg {
+    position: relative;
+    top: 0;
+  }
+
+  .vote-badge svg {
+    width: 30%;
+    position: absolute;
+    top: -30%;
+    right: 30%;
   }
 }
 
@@ -160,5 +239,17 @@ main {
   font-display: swap;
   font-family: "MADE-Dillan";
   font-weight: bold;
-  src: url("/fonts/MADE-Dillan.otf") format("opentype");
+  src: url("fonts/MADE-Dillan.otf") format("opentype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-weight: normal;
+  src: url("fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "RobotoLight";
+  src: url("fonts/Roboto-Light.ttf") format("truetype");
 }

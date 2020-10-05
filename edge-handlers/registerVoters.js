@@ -1,6 +1,8 @@
 export function onRequest(event) {
   event.replaceResponse(async () => {
     const area = event.request.origin.subdivision;
+    const country = event.request.origin.country;
+    console.log(country);
     let state = area && area.code ? area.code.toLowerCase() : "ca";
 
     const url = new URL(event.request.url);

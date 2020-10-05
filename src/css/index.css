@@ -1,25 +1,27 @@
 :root {
-  --red: #C5004A;
-  --darkred: #7F0036;
+  --red: #c5004a;
+  --darkred: #7f0036;
   --lightgray: #e0e0e0;
-  --gray: #C0C0C0;
+  --gray: #c0c0c0;
   --darkgray: #333;
-  --navy: #17050F;
+  --navy: #17050f;
   --blue: #082840;
   --white: #fff;
   --superblue: #2c69b3;
-  --fontDisplay: "MADE-Dillan", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --fontDisplay: "MADE-Dillan", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-sans-serif: Roboto, sans-serif;
   --mamaBear: 32em;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0; 
+  padding: 0;
   margin: 0;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -28,9 +30,11 @@ html, body {
 body {
   display: flex;
   flex-wrap: wrap;
-  background-image: url("assets/waves.svg");
-  background-size: cover;
+  background-image: url("assets/top-wave.svg"), url("assets/bottom-wave.svg");
+  background-position: right top, left calc(100% + 100px);
   background-repeat: no-repeat;
+  background-size: 60%, 100%;
+  background-attachment: fixed;
 }
 
 main {
@@ -71,6 +75,40 @@ main {
   text-align: justify;
 }
 
+.register-details--reference-link,
+.register-details--reference-link a {
+  color: #146396;
+}
+
+.register-details--reference-link {
+  position: absolute;
+  font-size: 0.75em;
+}
+
+.register-details--reference-link a::after {
+  content: "";
+  background: url("assets/icon-external-link-highlight.svg") 50% / contain no-repeat;
+  margin: 0 0.15rem;
+  padding-right: 0.65rem;
+}
+
+.external-link {
+  font-size: 1em;
+  position: relative;
+  margin-top: 1em;
+}
+
+.external-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1.5px;
+  background: #146396;
+  bottom: 3px;
+  width: 448px;
+  left: 30px;
+}
+
 footer {
   padding: 1em;
   width: 100%;
@@ -79,6 +117,7 @@ footer {
 
 /* svgs */
 .vote-hand {
+  margin-top: -10px;
   height: 460px;
 }
 
@@ -94,18 +133,19 @@ footer {
 
 .state-outline svg {
   position: absolute;
-  top:3em;
+  top: 3em;
   width: 100%;
   height: 100%;
   fill: #ddae2c;
 }
 
-@media(min-width: 32em) {
+@media (min-width: 32em) {
 }
 
 /* papa Bear */
-@media(min-width: 60em) {
-  main, html {
+@media (min-width: 60em) {
+  main,
+  html {
     overflow: hidden;
   }
 

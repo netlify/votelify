@@ -84,12 +84,10 @@ main {
 .register-details--reference-link,
 .register-details--reference-link a {
   color: #146396;
-
 }
 
 .register-details--reference-link {
   position: absolute;
-  font-size: 0.75em;
 }
 
 .register-details--reference-link a::after {

@@ -131,6 +131,7 @@ a:hover {
 }
 
 footer {
+  color: var(--gray);
   padding: 1em;
   width: 100%;
   text-align: right;
@@ -189,6 +190,9 @@ footer {
     position: absolute;
     top: -11%;
     right: 22%;
+  }
+  footer {
+    text-align: center;
   }
 }
 

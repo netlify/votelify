@@ -6,6 +6,8 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("_headers");
 
+  eleventyConfig.addPassthroughCopy({ "src/_includes/assets/favicon": "assets/favicon" });
+
   eleventyConfig.addFilter('getStateName', (state) => {
     let states = {
       "al": "Alabama",

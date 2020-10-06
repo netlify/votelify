@@ -17,16 +17,16 @@ permalink: "state/{{ state | slug }}/index.html"
         <h3>How to Register in <span class="register-state">📍{{ state | getStateName }}</span></h3>
         <div class="registration-details--chunk">
           {% if registerByState[state].links.online %}
-          <p>Register online at <span class="register-details--reference-link external-link"><a href="{{ registerByState[state].links.online }}">{{ state | getStateName }}’s state election website.</a></span></p>
+          <p>Register online at <span class="register-details--reference-link external-link"><a href="{{ registerByState[state].links.online }}">{{ state | getStateName }}’s state election website</a></span></p>
           {% endif %}
           {% if registerByState[state].links.mail %}
-          <p>Register by mail at <span class="register-details--reference-link external-link"><a href="{{ registerByState[state].links.mail }}">{{ state | getStateName }}’s state election website.</a></span></p>
+          <p>Register by mail at <span class="register-details--reference-link external-link"><a href="{{ registerByState[state].links.mail }}">{{ state | getStateName }}’s state election website</a></span></p>
           {% endif %}
           {% if registerByState[state].links["in person"] %}
-          <p>Register in person at <span class="register-details--reference-link external-link"><a href="{{ registerByState[state].links['in person'] }}">{{ state | getStateName }}’s state election website.</a></span></p>
+          <p>Register in person at <span class="register-details--reference-link external-link"><a href="{{ registerByState[state].links['in person'] }}">{{ state | getStateName }}’s state election website</a></span></p>
           {% endif %}
           {% if state === "nd" %}
-          <p>Voter registration is not required in North Dakota. <span class="register-details--reference-link external-link"><a href="{{ registerByState[state].links['learn'] }}">Learn more about voting on North Dakotas election website.</a></span></p>
+          <p>Voter registration is not required in North Dakota.</p><p class="register-details--reference-link external-link"><a href="{{ registerByState[state].links['learn'] }}">Learn more about voting on North Dakotas election website</a></p>
           {% endif %}
         </div>
       </div>
@@ -43,11 +43,11 @@ permalink: "state/{{ state | slug }}/index.html"
           <p>In-person Registration: <span class="register-date">{{ registerByState[state].dates["in person"] | addSpaces }}</span></p>
           {% endif %}
           {% if state === "nd" %}
-          <p>✨Residents of North Dakota are automatically registered to vote.✨</p>
+          <p>✨Residents of North Dakota are automatically registered to vote ✨</p>
           {% endif %}
         </div>
       </div>
     </div>
   </section>
-  
+
 </div>

@@ -65,6 +65,7 @@ a {
 a:hover {
     color: var(--black);
     text-decoration: none;
+    fill: #2D3B41;
 }
 
 /* sections */

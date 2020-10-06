@@ -88,11 +88,6 @@ a:hover {
   padding: 1em 0;
 }
 
-.register-details--reference-link,
-.register-details--reference-link a {
-  color: var(--blue);
-}
-
 .register-details--reference-link {
   position: absolute;
 }

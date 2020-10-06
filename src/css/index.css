@@ -1,14 +1,12 @@
 :root {
   --red: #c5004a;
   --darkred: #7f0036;
-  --lightgray: #e0e0e0;
-  --gray: #c0c0c0;
-  --darkgray: #333;
+  --lightgray: #F7F8F8;
+  --gray: #7D8589;
+  --darkgray: #646E73;
   --black: #2D3B41;
-  --navy: #17050f;
-  --blue: #082840;
+  --blue: #146396;
   --white: #fff;
-  --superblue: #2c69b3;
   --fontDisplay: "MADE-Dillan", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-sans-serif: Roboto, sans-serif;

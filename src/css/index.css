@@ -37,7 +37,7 @@ body {
   background-size: 60%, 100%;
   background-attachment: fixed;
   font-family: var(--font-sans-serif);
-  color: #646e73;
+  color: var(--darkgray);
 }
 
 main {
@@ -52,11 +52,10 @@ main {
 .heading {
   --heading-min-font-size: 3em;
   font-family: var(--fontDisplay);
-  font-weight: 400;
   font-size: var(--heading-min-font-size);
   font-size: clamp(var(--heading-min-font-size), 6vw, 4.25em);
   text-align: center;
-  color: #146396;
+  color: var(--blue);
 }
 
 /* sections */
@@ -82,7 +81,7 @@ main {
 
 .register-details--reference-link,
 .register-details--reference-link a {
-  color: #146396;
+  color: var(--blue);
 }
 
 .register-details--reference-link {
@@ -114,9 +113,11 @@ main {
 }
 
 .register-state {
-  background: #f7f8f8;
-  padding: 6px 2px;
-  font-weight: 700;
+  background: var(--lightgray);
+  color: var(--black);
+  padding: 6px 6px 6px 2px;
+  font-weight: bold;
+  border-radius: 6px;
 }
 
 .register-date {
@@ -215,6 +216,7 @@ footer {
   }
 
   footer {
+    color: var(--gray);
     position: absolute;
     bottom: 0;
   }

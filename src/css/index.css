@@ -4,6 +4,7 @@
   --lightgray: #e0e0e0;
   --gray: #c0c0c0;
   --darkgray: #333;
+  --black: #2D3B41;
   --navy: #17050f;
   --blue: #082840;
   --white: #fff;
@@ -136,8 +137,8 @@ footer {
 }
 
 .bold {
-  font-weight: 400;
-  color: black;
+  font-weight: bold;
+  color: var(--black);
 }
 
 /* svgs */

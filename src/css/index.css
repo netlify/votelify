@@ -71,7 +71,7 @@ a:hover {
 /* sections */
 .top-section {
   display: grid;
-  grid-gap: 3rem;
+  grid-gap: 10rem;
   margin-bottom: 2rem;
   text-align: left;
   max-width: 72em;
@@ -196,6 +196,11 @@ footer a {
     top: -11%;
     right: 22%;
   }
+
+  .top-section {
+    grid-gap: 3rem;
+  }
+
   footer {
     text-align: center;
       color: var(--gray);
@@ -208,6 +213,10 @@ footer a {
     position: absolute;
     top: -30%;
     right: 30%;
+  }
+
+  .top-section {
+    grid-gap: 8rem;
   }
 }
 

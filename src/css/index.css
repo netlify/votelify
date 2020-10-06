@@ -89,10 +89,6 @@ a:hover {
   padding: 1.3em 0;
 }
 
-.register-details--reference-link {
-  position: absolute;
-}
-
 .register-details--reference-link a::after {
   content: "";
   background: url("assets/icon-external-link-highlight.svg") 50% / contain no-repeat;

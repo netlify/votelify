@@ -219,6 +219,10 @@ footer {
     bottom: 0;
   }
 
+  footer a {
+    color: var(--gray: #7D8589);
+  }
+
   .vote-hand {
     height: 100%;
   }

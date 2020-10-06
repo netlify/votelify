@@ -220,7 +220,7 @@ footer {
   }
 
   footer a {
-    color: var(--gray: #7D8589);
+    color: var(--gray);
   }
 
   .vote-hand {

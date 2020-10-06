@@ -264,13 +264,13 @@ footer a {
 }
 
 @font-face {
-  font-family: "RobotoMedium";
+  font-family: "Roboto-Medium";
   font-weight: medium;
   src: url("fonts/Roboto-Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "RobotoBold";
+  font-family: "Roboto-Bold";
   font-weight: bold;
   src: url("fonts/Roboto-Bold.ttf") format("truetype");
 }

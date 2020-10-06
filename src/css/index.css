@@ -116,13 +116,13 @@ a:hover {
 .register-state {
   background: var(--lightgray);
   color: var(--black);
-  font-weight: var(--font-bold);
+  font-family: var(--font-bold);
   padding: 6px 6px 6px 2px;
   border-radius: 6px;
 }
 
 .register-date {
-  font-weight: var(--font-medium);
+  font-family: var(--font-medium);
   color: var(--black);
 }
 
@@ -142,7 +142,7 @@ footer a {
 }
 
 .bold {
-  font-weight: var(--font-bold);
+  font-family: var(--font-bold);
   color: var(--black);
 }
 

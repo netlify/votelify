@@ -106,7 +106,7 @@ a:hover {
 
 .register-link--header h3 {
   margin-bottom: 18px;
-  font-weight: 500;
+  font-weight: var(--font-medium);
 }
 
 .register-link--header:not(:first-child) {
@@ -116,8 +116,8 @@ a:hover {
 .register-state {
   background: var(--lightgray);
   color: var(--black);
+  font-weight: var(--font-bold);
   padding: 6px 6px 6px 2px;
-  font-weight: bold;
   border-radius: 6px;
 }
 
@@ -142,7 +142,7 @@ footer a {
 }
 
 .bold {
-  font-weight: var(--bold);
+  font-weight: var(--font-bold);
   color: var(--black);
 }
 

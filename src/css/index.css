@@ -58,6 +58,14 @@ main {
   color: var(--blue);
 }
 
+a {
+    color: var(--blue);
+}
+
+a:hover {
+    color: var(--black);
+}
+
 /* sections */
 .top-section {
   display: grid;

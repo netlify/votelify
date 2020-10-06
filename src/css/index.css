@@ -193,6 +193,7 @@ footer {
   }
   footer {
     text-align: center;
+      color: var(--gray);
   }
 }
 
@@ -222,6 +223,7 @@ footer {
 
   footer {
     color: var(--gray);
+    text-align: right;
     position: absolute;
     bottom: 0;
   }

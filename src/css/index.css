@@ -196,6 +196,14 @@ footer a {
     right: 22%;
   }
 
+  .vote-hand {
+    height: 460px;
+  }
+
+  .vote-hand svg {
+    height: 110%;
+  }
+
   .top-section {
     grid-gap: 3rem;
   }
@@ -218,6 +226,8 @@ footer a {
     grid-gap: 8rem;
   }
 }
+
+
 
 /* papa Bear */
 @media (min-width: 60em) {
@@ -243,6 +253,10 @@ footer a {
 
   .vote-hand {
     height: 100%;
+  }
+
+  .vote-hand svg {
+    height: auto;
   }
 
   .state-outline svg {

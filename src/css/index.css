@@ -142,7 +142,7 @@ footer a {
 }
 
 .bold {
-  font-weight: bold;
+  font-weight: var(--bold);
   color: var(--black);
 }
 

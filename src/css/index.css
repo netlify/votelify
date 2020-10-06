@@ -106,7 +106,7 @@ a:hover {
 
 .register-link--header h3 {
   margin-bottom: 18px;
-  font-weight: var(--font-medium);
+  font-family: var(--font-medium);
 }
 
 .register-link--header:not(:first-child) {

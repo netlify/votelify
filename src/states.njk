@@ -11,10 +11,10 @@ permalink: "state/{{ state | slug }}/index.html"
   {{ state | getSVGURL | svgContents('class') | safe }}
   </div>
   <section class="register-details">
-    <h1 class="heading">Register to Vote</h1>
+    <h1 class="heading">Register to vote</h1>
     <div class="register-details--text">
       <div class="register-details--links register-link--header">
-        <h3>How to Register in <span class="register-state">📍{{ state | getStateName }}</span></h3>
+        <h3>How to register in <span class="register-state">📍{{ state | getStateName }}</span></h3>
         <div class="registration-details--chunk">
           {% if registerByState[state].links.online %}
           <p>Register online at <span class="register-details--reference-link external-link"><a href="{{ registerByState[state].links.online }}">{{ state | getStateName }}’s state election website</a></span></p>

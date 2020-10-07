@@ -1,5 +1,6 @@
 export function onRequest(event) {
   const { code } = event.request.origin.country;
+  console.log(code)
 
   if (code === "US") {
     const { code: state } = event.request.origin.subdivision;

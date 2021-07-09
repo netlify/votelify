@@ -26,6 +26,7 @@
     "url": "git+https://github.com/netlify/votelify.git"
   },
   "devDependencies": {
+    "@netlify/edge-handler-types": "^0.30.2",
     "css-what": "^3.3.0",
     "html-entities": "^1.3.1",
     "htmlparser2": "^4.1.0"

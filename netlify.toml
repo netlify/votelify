@@ -1,10 +1,8 @@
 [build]
   command = "npm run build"
   publish = "_site"
+  edge_handlers = "edge-handlers"
 
-[[redirects]]
-  from = "/"
-  to = "/"
-  status = 200
-  force = true
-  edge_handler = "registerVoters"
+[[edge_handlers]]
+  path = "/"
+  handler = "registerVoters"

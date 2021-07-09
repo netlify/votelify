@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "lib": ["ES2020"],
+      "typeRoots": [
+        "node_modules/@netlify" // Include this line for Edge Handler types
+      ]
+    }
+  }
+  
